@@ -1,0 +1,24 @@
+<h1>Boxes</h1>
+
+<section class="boxes">
+  <% @boxes.each do |box| %>
+    <%= erb :"boxes/_box.html", locals: { box: box } %>
+  <% end %>
+</section>
+
+<section class="new-box">
+  <h2>Create a Box</h2>
+  <form method="POST" action="/boxes">
+    <input type="text" name="box[name]" placeholder="Name" required>
+
+    <input type="number" name="box[volume]" placeholder="Volume (cubic cm)" required>
+
+    <input type="text" name="box[color]" placeholder="Color" required>
+
+    <input type="text" name="box[material]" placeholder="Material" required>
+
+    <input type="submit">
+  </form>
+</section>
+
+
